@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string-array name="weatherimages">
+        <item>@drawable/d00</item>
+        <item>@drawable/d01</item>
+        <item>@drawable/d02</item>
+        <item>@drawable/d03</item>
+        <item>@drawable/d04</item>
+        <item>@drawable/d05</item>
+        <item>@drawable/d06</item>
+        <item>@drawable/d07</item>
+        <item>@drawable/d08</item>
+        <item>@drawable/d09</item>
+        <item>@drawable/d10</item>
+        <item>@drawable/d11</item>
+        <item>@drawable/d12</item>
+        <item>@drawable/d13</item>
+        <item>@drawable/d14</item>
+        <item>@drawable/d15</item>
+        <item>@drawable/d16</item>
+        <item>@drawable/d17</item>
+        <item>@drawable/d18</item>
+        <item>@drawable/d19</item>
+        <item>@drawable/d20</item>
+        <item>@drawable/d21</item>
+        <item>@drawable/d22</item>
+        <item>@drawable/d23</item>
+        <item>@drawable/d24</item>
+        <item>@drawable/d25</item>
+        <item>@drawable/d26</item>
+        <item>@drawable/d27</item>
+        <item>@drawable/d28</item>
+        <item>@drawable/d29</item>
+        <item>@drawable/d30</item>
+        <item>@drawable/d20</item><!-- 强沙尘暴 -->
+        <item>@drawable/d53</item><!-- 霾 -->
+        <item>@drawable/n00</item>
+        <item>@drawable/n01</item>
+        <item>@drawable/n02</item>
+        <item>@drawable/n03</item>
+        <item>@drawable/n04</item>
+        <item>@drawable/n05</item>
+        <item>@drawable/n06</item>
+        <item>@drawable/n07</item>
+        <item>@drawable/n08</item>
+        <item>@drawable/n09</item>
+        <item>@drawable/n10</item>
+        <item>@drawable/n11</item>
+        <item>@drawable/n12</item>
+        <item>@drawable/n13</item>
+        <item>@drawable/n14</item>
+        <item>@drawable/n15</item>
+        <item>@drawable/n16</item>
+        <item>@drawable/n17</item>
+        <item>@drawable/n18</item>
+        <item>@drawable/n19</item>
+        <item>@drawable/n20</item>
+        <item>@drawable/n21</item>
+        <item>@drawable/n22</item>
+        <item>@drawable/n23</item>
+        <item>@drawable/n24</item>
+        <item>@drawable/n25</item>
+        <item>@drawable/n26</item>
+        <item>@drawable/n27</item>
+        <item>@drawable/n28</item>
+        <item>@drawable/n29</item>
+        <item>@drawable/n30</item>
+        <item>@drawable/n20</item><!-- 强沙尘暴 -->
+        <item>@drawable/n53</item><!-- 霾 -->
+    </string-array>
+
+</resources>
