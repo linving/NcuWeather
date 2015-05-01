@@ -6,6 +6,7 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
 
+import org.apache.http.Header;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -27,6 +28,9 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.TextView;
+
+import com.loopj.android.http.AsyncHttpClient;
+import com.loopj.android.http.AsyncHttpResponseHandler;
 
 public class MainActivity extends Activity {
 
@@ -57,26 +61,91 @@ public class MainActivity extends Activity {
 
 		daysName = new ArrayList<String>();
 		SetResources();
-		
-		String str = getAssetsData("101240101.html");
-		listHourData = Json2list_hour(str);
-		String str2 = getAssetsData("101010100.html");
-		listDayData = Json2list_day(str2);
 
-		SetGridParams(listHourData.size(), 80);
-		gridAdapter h_adapter = new gridAdapter();
-		gridView.setAdapter(h_adapter);
-
-		listAdapter d_adapter = new listAdapter();
-		listView.setAdapter(d_adapter);
-
+		GetHoursData("http://m.weather.com.cn//mpub/hours/101240101.html");
+		GetDaysData("http://m.weather.com.cn/data/101010100.html");
 	}
 
+	public void GetHoursData(String url) {
+
+		AsyncHttpClient asyClient = new AsyncHttpClient();
+		asyClient.get(url, new AsyncHttpResponseHandler() {
+
+			@Override
+			public void onFailure(int arg0, Header[] arg1, byte[] arg2,
+					Throwable arg3) {
+				// called when response HTTP status is "4XX" (eg. 401, 403, 404)
+				System.out.println("failure");
+			}
+
+			@Override
+			public void onRetry(int retryNo) {
+				super.onRetry(retryNo);
+				// called when request is retried
+				System.out.println("retry");
+			}
+
+			@Override
+			public void onStart() {
+				super.onStart();
+				// called before request is started
+				System.out.println("start");
+			}
+
+			@Override
+			public void onSuccess(int arg0, Header[] arg1, byte[] arg2) {
+				System.out.println("success");
+				String str = new String(arg2);
+				listHourData = Json2list_hour(str);
+
+				SetGridParams(listHourData.size(), 80);
+				gridAdapter h_adapter = new gridAdapter();
+				gridView.setAdapter(h_adapter);
+			}
+		});
+	}
+
+	public void GetDaysData(String url){
+		AsyncHttpClient asyClient = new AsyncHttpClient();
+		asyClient.get(url, new AsyncHttpResponseHandler() {
+
+			@Override
+			public void onFailure(int arg0, Header[] arg1, byte[] arg2,
+					Throwable arg3) {
+				// called when response HTTP status is "4XX" (eg. 401, 403, 404)
+			}
+
+			@Override
+			public void onRetry(int retryNo) {
+				super.onRetry(retryNo);
+				// called when request is retried
+			}
+
+			@Override
+			public void onStart() {
+				super.onStart();
+				// called before request is started
+			}
+
+			@Override
+			public void onSuccess(int arg0, Header[] arg1, byte[] arg2) {
+				String str2 = new String(arg2);
+				listDayData = Json2list_day(str2);
+
+				listAdapter d_adapter = new listAdapter();
+				listView.setAdapter(d_adapter);
+			}
+		});
+	}
+	
+	// 设置天气图片资源
 	public void SetResources() {
+		// 获取资源组
 		TypedArray ar = getResources().obtainTypedArray(R.array.weatherimages);
 		int len = ar.length();
 		resIds = new int[len];
 		for (int i = 0; i < len; i++) {
+			// 添加资源的ID到数组中
 			resIds[i] = ar.getResourceId(i, 0);
 		}
 		ar.recycle();
@@ -99,6 +168,12 @@ public class MainActivity extends Activity {
 		gridView.setNumColumns(size); // 重点
 	}
 
+	/**
+	 * 自定义的Adapter，适配GridView
+	 * 
+	 * @author wangpeng
+	 * 
+	 */
 	public class gridAdapter extends BaseAdapter {
 
 		public int getCount() {
@@ -146,6 +221,12 @@ public class MainActivity extends Activity {
 
 	}
 
+	/**
+	 * 自定义的Adapter，适配ListView
+	 * 
+	 * @author wangpeng
+	 * 
+	 */
 	public class listAdapter extends BaseAdapter {
 
 		public int getCount() {
@@ -170,7 +251,7 @@ public class MainActivity extends Activity {
 			TextView textv3 = (TextView) v.findViewById(R.id.weatherdayTextv3);
 			textv3.setText(listDayData.get(position).weather);
 			textv2.setText(listDayData.get(position).tep);
-			
+
 			ImageView imagev = (ImageView) v
 					.findViewById(R.id.weatherdayImagev);
 			int weatherId = Integer.parseInt(listDayData.get(position).img);
@@ -272,12 +353,12 @@ public class MainActivity extends Activity {
 					week = i;
 				}
 			}
-			daysName.add(weeks[(week+1)%7]);
-			daysName.add(weeks[(week+2)%7]);
-			daysName.add(weeks[(week+3)%7]);
-			daysName.add(weeks[(week+4)%7]);
-			daysName.add(weeks[(week+5)%7]);
-			
+			daysName.add(weeks[(week + 1) % 7]);
+			daysName.add(weeks[(week + 2) % 7]);
+			daysName.add(weeks[(week + 3) % 7]);
+			daysName.add(weeks[(week + 4) % 7]);
+			daysName.add(weeks[(week + 5) % 7]);
+
 		} catch (JSONException e) {
 			e.printStackTrace();
 		}
