@@ -24,28 +24,32 @@
             android:id="@+id/weatherdayImagev"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:scaleX="0.5"
-            android:scaleY="0.5"
-            android:src="@drawable/d08" />
+            android:scaleX="0.4"
+            android:scaleY="0.4"
+            android:src="@drawable/d08" 
+            android:layout_marginRight="-0dp"
+            android:layout_marginTop="-15dp"
+            android:layout_marginBottom="-15dp"/>
 
-        <TextView
-            android:id="@+id/weatherdayTextv2"
+        <ImageView
+            android:id="@+id/weatherdayImagev2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginRight="20dp"
-            android:layout_gravity="center_vertical"
-            
-            android:text="晴转多云" />
+            android:scaleX="0.4"
+            android:scaleY="0.4"
+            android:src="@drawable/d08" 
+            android:layout_marginLeft="-40dp"
+            android:layout_marginTop="-15dp"
+            android:layout_marginBottom="-15dp"/>
     </LinearLayout>
 
     <TextView
-        android:id="@+id/weatherdayTextv3"
+        android:id="@+id/weatherdayTextv2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerVertical="true"
         android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
         android:layout_marginRight="20dp"
-        
         android:text="12~14度" />
 
 </RelativeLayout>

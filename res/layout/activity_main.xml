@@ -57,9 +57,34 @@
                 android:layout_height="wrap_content"
                 android:gravity="center"
                 android:text="7~12 ℃"
-                android:textSize="30sp" />
+                android:textSize="35sp" />
         </LinearLayout>
     </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="-12dp"
+        android:layout_marginTop="10dp"
+        android:orientation="horizontal" >
+
+        <TextView
+            android:id="@+id/publishtimeTextv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="10dp"
+            android:text="发布时间：15:30"
+            android:textColor="#999"
+            android:textSize="10sp" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:layout_centerVertical="true"
+            android:layout_toLeftOf="@+id/publishtimeTextv"
+            android:background="#DEDEDE" />
+    </RelativeLayout>
 
     <HorizontalScrollView
         android:layout_width="fill_parent"
@@ -79,6 +104,12 @@
             </GridView>
         </LinearLayout>
     </HorizontalScrollView>
+
+    <View
+        android:layout_width="fill_parent"
+        android:layout_height="0.5dp"
+        android:layout_marginTop="-10dp"
+        android:background="#DEDEDE" />
 
     <ListView
         android:id="@+id/weatherdaysListv"

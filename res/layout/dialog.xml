@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <EditText
+        android:id="@+id/DialogSearchEditv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="在此输入城市名" />
+
+    <TextView
+        android:id="@+id/DialogSearchCityTextv"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="未查找到相关城市"
+        android:visibility="gone" >
+    </TextView>
+
+    <ListView
+        android:id="@+id/DialogCitysLv"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="#eee" >
+    </ListView>
+
+</LinearLayout>
