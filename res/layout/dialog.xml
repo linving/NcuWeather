@@ -11,7 +11,7 @@
         android:hint="在此输入城市名" />
 
     <TextView
-        android:id="@+id/DialogSearchCityTextv"
+        android:id="@+id/DialogSearchTipTextv"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:text="未查找到相关城市"
