@@ -68,6 +68,72 @@
         <item>@drawable/n30</item>
         <item>@drawable/n20</item><!-- 强沙尘暴 -->
         <item>@drawable/n53</item><!-- 霾 -->
+        <item>@drawable/d00_120</item>
+        <item>@drawable/d01_120</item>
+        <item>@drawable/d02_120</item>
+        <item>@drawable/d03_120</item>
+        <item>@drawable/d04_120</item>
+        <item>@drawable/d05_120</item>
+        <item>@drawable/d06_120</item>
+        <item>@drawable/d07_120</item>
+        <item>@drawable/d08_120</item>
+        <item>@drawable/d09_120</item>
+        <item>@drawable/d10_120</item>
+        <item>@drawable/d11_120</item>
+        <item>@drawable/d12_120</item>
+        <item>@drawable/d13_120</item>
+        <item>@drawable/d14_120</item>
+        <item>@drawable/d15_120</item>
+        <item>@drawable/d16_120</item>
+        <item>@drawable/d17_120</item>
+        <item>@drawable/d18_120</item>
+        <item>@drawable/d19_120</item>
+        <item>@drawable/d20_120</item>
+        <item>@drawable/d21_120</item>
+        <item>@drawable/d22_120</item>
+        <item>@drawable/d23_120</item>
+        <item>@drawable/d24_120</item>
+        <item>@drawable/d25_120</item>
+        <item>@drawable/d26_120</item>
+        <item>@drawable/d27_120</item>
+        <item>@drawable/d28_120</item>
+        <item>@drawable/d29_120</item>
+        <item>@drawable/d30_120</item>
+        <item>@drawable/d20_120</item><!-- 强沙尘暴 -->
+        <item>@drawable/d53_120</item><!-- 霾 -->
+        <item>@drawable/n00_120</item>
+        <item>@drawable/n01_120</item>
+        <item>@drawable/n02_120</item>
+        <item>@drawable/n03_120</item>
+        <item>@drawable/n04_120</item>
+        <item>@drawable/n05_120</item>
+        <item>@drawable/n06_120</item>
+        <item>@drawable/n07_120</item>
+        <item>@drawable/n08_120</item>
+        <item>@drawable/n09_120</item>
+        <item>@drawable/n10_120</item>
+        <item>@drawable/n11_120</item>
+        <item>@drawable/n12_120</item>
+        <item>@drawable/n13_120</item>
+        <item>@drawable/n14_120</item>
+        <item>@drawable/n15_120</item>
+        <item>@drawable/n16_120</item>
+        <item>@drawable/n17_120</item>
+        <item>@drawable/n18_120</item>
+        <item>@drawable/n19_120</item>
+        <item>@drawable/n20_120</item>
+        <item>@drawable/n21_120</item>
+        <item>@drawable/n22_120</item>
+        <item>@drawable/n23_120</item>
+        <item>@drawable/n24_120</item>
+        <item>@drawable/n25_120</item>
+        <item>@drawable/n26_120</item>
+        <item>@drawable/n27_120</item>
+        <item>@drawable/n28_120</item>
+        <item>@drawable/n29_120</item>
+        <item>@drawable/n30_120</item>
+        <item>@drawable/n20_120</item><!-- 强沙尘暴 -->
+        <item>@drawable/n53_120</item><!-- 霾 -->
     </string-array>
 
 </resources>

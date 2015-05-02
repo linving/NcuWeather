@@ -4,6 +4,7 @@ import java.util.ArrayList;
 
 import org.wangpeng.ncuweather.MainActivity;
 import org.wangpeng.ncuweather.R;
+import org.wangpeng.ncuweather.animations.weatherAni;
 import org.wangpeng.ncuweather.classes.WeatherHourInfo;
 
 import android.app.Activity;
@@ -64,6 +65,9 @@ public class gridAdapter extends BaseAdapter {
 		if (hour > 19 || hour < 6) {
 			weatherId += 33;
 		}
+		weatherAni ani = new weatherAni();
+		ani.setDuration(1000);
+		imagev.startAnimation(ani);
 		imagev.setImageResource(MainActivity.resIds[weatherId]);
 
 		TextView textv2 = (TextView) v.findViewById(R.id.weatheritemTextv2);

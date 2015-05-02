@@ -6,6 +6,7 @@ import java.io.InputStream;
 import java.util.ArrayList;
 
 import org.wangpeng.ncuweather.adapters.CityListAdapter;
+import org.wangpeng.ncuweather.animations.btnAnima;
 import org.wangpeng.ncuweather.classes.CityInfo;
 
 import android.app.Activity;
@@ -50,8 +51,14 @@ public class CitySettingOnClickListener implements OnClickListener {
 	public CitySettingOnClickListener(Context context) {
 		this.context = context;
 	}
+	
+	btnAnima ani = new btnAnima();
 
 	public void onClick(View v) {
+		
+		ani.setDuration(800);
+		v.startAnimation(ani);
+		
 		Toast.makeText(context, "选择城市", Toast.LENGTH_SHORT).show();
 		// 获取布局管理器
 		LayoutInflater flater = ((Activity) context).getLayoutInflater();
@@ -129,8 +136,8 @@ public class CitySettingOnClickListener implements OnClickListener {
 
 			public void onItemClick(AdapterView<?> parent, View view,
 					int position, long id) {
-				Toast.makeText(context, list_citys.get(position).areaid,
-						Toast.LENGTH_SHORT).show();
+				//Toast.makeText(context, list_citys.get(position).areaid,
+				//		Toast.LENGTH_SHORT).show();
 
 				// 获取到点击项中的城市名和城市ID
 				String City = list_citys.get(position).name;

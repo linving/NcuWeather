@@ -8,7 +8,9 @@
         android:id="@+id/DialogLvItemTextv"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:text="城市" 
-        android:textSize="20sp"/>
+        android:gravity="center_horizontal"
+        android:text="城市"
+        android:textSize="20sp" 
+        android:padding="5dp"/>
 
 </LinearLayout>

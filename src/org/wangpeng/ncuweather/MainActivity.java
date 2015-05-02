@@ -21,6 +21,8 @@ import org.wangpeng.ncuweather.classes.WeatherDayInfo;
 import org.wangpeng.ncuweather.classes.WeatherHourInfo;
 
 import android.app.Activity;
+import android.app.AlertDialog;
+import android.app.Dialog;
 import android.app.Fragment;
 import android.content.Context;
 import android.content.res.TypedArray;
@@ -85,10 +87,25 @@ public class MainActivity extends Activity {
 		daysName = new ArrayList<String>();
 		SetResources();
 
-		ShowUI("101240101","南昌");
+		// ShowUI("101240101","南昌");
+		Test();
 
 		weatherCitySettingBtn
 				.setOnClickListener(new CitySettingOnClickListener(this));
+	}
+
+	// 本地测试模拟联网数据
+	public void Test() {
+		String result = getAssetsData("daysdata.json");
+		listDayData = Json2list_day_juhe(result);
+		listAdapter d_adapter = new listAdapter(MainActivity.this, listDayData);
+		listView.setAdapter(d_adapter);
+
+		listHourData = Json2list_hour(getAssetsData("101240101.html"));
+		// 设置GridView的项数和每项宽度属性属性
+		SetGridParams(listHourData.size(), 80);
+		gridAdapter h_adapter = new gridAdapter(MainActivity.this, listHourData);
+		gridView.setAdapter(h_adapter);
 	}
 
 	public void ShowUI(String AreaId, String CityName) {
@@ -105,6 +122,9 @@ public class MainActivity extends Activity {
 
 		// 显示进度条
 		progressbar.setVisibility(View.VISIBLE);
+		// 移除上一次的数据
+		listDayData.clear();
+		listView.setAdapter(null);
 
 		JuheData.executeWithAPI(39, "http://v.juhe.cn/weather/index",
 				JuheData.GET, params, new DataCallBack() {
@@ -264,6 +284,7 @@ public class MainActivity extends Activity {
 		}
 		return list;
 	}
+
 	/**
 	 * json数据转化到ArrayList<WeatherDayInfo>
 	 * 
@@ -283,10 +304,24 @@ public class MainActivity extends Activity {
 			// 今日天气
 			JSONObject today = weatherobj.getJSONObject("today");
 			{
+				int weatherId = Integer.parseInt(today.getJSONObject(
+						"weather_id").getString("fa"));
+				int hour = Integer.parseInt(sk.getString("time")
+						.substring(0, 2));
+
+				// 如果是霾，图片编号为32
+				if (weatherId == 53) {
+					weatherId = 32;
+				} // 如果是夜晚，换为夜晚的图标
+				if (hour > 19 || hour < 6) {
+					weatherId += 33;
+				}
+
+				weatherImagev.setImageResource(resIds[weatherId + 66]);
+
 				weatherCityTextv.setText(today.getString("city"));
-				weatherTepTextv.setText(today.getString("temperature"));
-				weatherImagev.setImageResource(resIds[Integer.parseInt(today
-						.getJSONObject("weather_id").getString("fa"))]);
+				weatherTepTextv.setText(today.getString("temperature").replace(
+						"℃~", "~"));
 			}
 			// 未来几天天气
 			JSONObject future = weatherobj.getJSONObject("future");
@@ -371,7 +406,14 @@ public class MainActivity extends Activity {
 		// automatically handle clicks on the Home/Up button, so long
 		// as you specify a parent activity in AndroidManifest.xml.
 		int id = item.getItemId();
-		if (id == R.id.action_settings) {
+		if (id == R.id.about) {
+
+			LayoutInflater flater = getLayoutInflater();
+			View mview = flater.inflate(R.layout.aboutdialog, null);
+			Dialog dialog = new AlertDialog.Builder(this).setView(mview)
+					.create();
+			// 显示对话框
+			dialog.show();
 			return true;
 		}
 		return super.onOptionsItemSelected(item);

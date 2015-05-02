@@ -16,20 +16,15 @@
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/weatheritemTextv"
-        android:scaleX="0.5"
-        android:scaleY="0.5"
-        android:src="@drawable/ic_launcher" 
-        android:layout_marginTop="-10dp"
-        android:layout_marginBottom="-10dp"/>
+        android:src="@drawable/ic_launcher" />
 
     <TextView
         android:id="@+id/weatheritemTextv2"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
+        android:layout_below="@+id/weatheritemImagev"
         android:gravity="center"
         android:text="19"
-        android:textAlignment="center"
-        android:layout_below="@+id/weatheritemImagev"
-        />
+        android:textAlignment="center" />
 
 </RelativeLayout>
