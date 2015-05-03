@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="app_name">小天儿</string>
+    <string name="app_name">小天</string>
     <string name="action_about">关于</string>
 
 </resources>

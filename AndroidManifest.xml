@@ -14,11 +14,14 @@
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
 
+    
     <application
         android:allowBackup="true"
-        android:icon="@drawable/ic_launcher"
+        android:icon="@drawable/icon"
         android:label="@string/app_name"
+        android:logo="@drawable/ic_launcher"
         android:theme="@style/AppTheme" >
+        <!-- icon为桌面图标，logo为TitleBar图标 -->
         <meta-data
             android:name="com.thinkland.juheapi.openid"
             android:value="JHe65f8d09d76f274e1bcbb135bb66d0c8" />

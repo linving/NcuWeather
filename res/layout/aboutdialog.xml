@@ -10,14 +10,31 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="关于"
-        android:textColor="#4674ca"
         android:textSize="25sp" />
+
+    <View
+        android:layout_width="fill_parent"
+        android:layout_height="2dp"
+        android:layout_marginBottom="3dp"
+        android:layout_marginTop="3dp"
+        android:background="#4674ca" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:gravity="center_horizontal"
-        android:text="鸣谢\n中国气象数据开放平台\n聚合数据\n\n交流\n940499344@qq.com\ncoded by 汪鹏"
-        android:textSize="18sp" />
+        android:text="\n小天（v1.0）\n期待每一个明天 "
+        android:textSize="18sp"
+        android:textColor="#4674ca" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:gravity="right"
+        android:text="\n@汪鹏 2015.5"
+        android:textColor="#999"
+        android:textSize="15sp"
+        android:typeface="normal" />
 
 </LinearLayout>
